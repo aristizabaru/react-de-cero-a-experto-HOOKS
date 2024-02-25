@@ -5,10 +5,11 @@
 // import { MultipleCustomHooks } from "./03-examples/MultipleCustomHooks";
 // import { FocusRef } from "./04-useRef/FocusRef";
 // import { Layout } from "./05-useLayoutEffect/Layout";
-import { Memorize } from "./06-memo/Memorize";
+// import { Memorize } from "./06-memo/Memorize";
+import { MemoHook } from "./06-memo/MemoHook";
 
 export const HooksApp = () => {
     return (
-        <Memorize />
+        <MemoHook />
     );
 };
