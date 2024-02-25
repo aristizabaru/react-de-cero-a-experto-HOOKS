@@ -40,3 +40,9 @@ p {
   margin-bottom: 0.2em;
   font-size: 1.3em;
 }
+
+.alert-info {
+  background-color: rgb(240, 240, 240);
+  color: #242424;
+  border-color: #242424;
+}
