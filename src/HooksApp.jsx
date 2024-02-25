@@ -6,10 +6,11 @@
 // import { FocusRef } from "./04-useRef/FocusRef";
 // import { Layout } from "./05-useLayoutEffect/Layout";
 // import { Memorize } from "./06-memo/Memorize";
-import { MemoHook } from "./06-memo/MemoHook";
+// import { MemoHook } from "./06-memo/MemoHook";
+import { CallbackHook } from "./06-memo/CallbackHook";
 
 export const HooksApp = () => {
     return (
-        <MemoHook />
+        <CallbackHook />
     );
 };
