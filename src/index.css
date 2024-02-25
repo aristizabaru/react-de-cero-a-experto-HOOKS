@@ -41,6 +41,11 @@ p {
   font-size: 1.3em;
 }
 
+code {
+  display: block;
+  color: #242424;
+}
+
 .alert-info {
   background-color: rgb(240, 240, 240);
   color: #242424;
