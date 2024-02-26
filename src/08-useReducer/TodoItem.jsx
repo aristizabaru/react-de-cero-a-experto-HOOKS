@@ -1,9 +1,18 @@
 import PropTypes from 'prop-types';
 
-export const TodoItem = ({ value, id, onDeleteTodo }) => {
+export const TodoItem = ({ item, onDeleteTodo, onToggleTodo }) => {
+
+    const { todo, id, done } = item;
+
     return (
         <li className="list-group-item d-flex justify-content-between align-items-center">
-            <span>{value}</span>
+            <span
+                onClick={() => onToggleTodo(id)}
+                style={{ cursor: 'pointer' }}
+                className={`${done && 'text-decoration-line-through'}`}
+            >
+                {todo}
+            </span>
             <button
                 className="small"
                 onClick={() => onDeleteTodo(id)}
@@ -13,8 +22,8 @@ export const TodoItem = ({ value, id, onDeleteTodo }) => {
 };
 
 TodoItem.propTypes = {
-    value: PropTypes.string,
-    id: PropTypes.number,
-    onDeleteTodo: PropTypes.func
+    item: PropTypes.object,
+    onDeleteTodo: PropTypes.func,
+    onToggleTodo: PropTypes.func
 };
 
