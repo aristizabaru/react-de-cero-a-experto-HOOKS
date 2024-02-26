@@ -1,5 +1,7 @@
 import { useReducer } from "react";
 import { todoReducer } from "./todoReducer";
+import { TodoList } from "./TodoList";
+import { TodoAdd } from "./TodoAdd";
 
 const initialState = [
     {
@@ -18,8 +20,20 @@ export const TodoApp = () => {
 
     const [todos, dispatchTodo] = useReducer(todoReducer, initialState);
 
-    const handleNewTodo = (todo) => {
-        console.log({ todo });
+    const handleNewTodo = (description) => {
+
+        const newTodo = {
+            id: new Date().getTime(),
+            todo: description,
+            done: false,
+        };
+
+        const action = {
+            type: '[TODO] add todo',
+            payload: newTodo
+        };
+
+        dispatchTodo(action);
     };
 
     return (
@@ -29,35 +43,11 @@ export const TodoApp = () => {
             <div className="row">
                 <div className="col-7">
                     <h3 className="mb-3">TODOS (10) <small style={{ fontSize: '0.6em', marginLeft: 8 }}>pendientes (5)</small></h3>
-                    {/* TodoList */}
-                    <ul className="list-group">
-                        {
-                            /* TodoItem */
-                            todos.map(todo => (
-                                <li key={todo.id} className="list-group-item d-flex justify-content-between align-items-center">
-                                    <span>{todo.todo}</span>
-                                    <button className="small">Borrar</button>
-                                </li>
-                            ))
-                            /* TodoItem */
-                        }
-
-                    </ul>
-                    {/* TodoList */}
+                    <TodoList items={todos} />
                 </div>
                 <div className="col-5">
                     <h3 className="mb-3">Agregar TODO</h3>
-                    {/* TodoAdd onNewTodo */}
-                    {/* {id: new Date()...} */}
-                    <form>
-                        <input
-                            type="text"
-                            placeholder="¿Qué tarea hay para hacer?"
-                            className="form-control"
-                        />
-                        <button type="submit" className="mt-3">Agregar</button>
-                    </form>
-                    {/* TodoAdd */}
+                    <TodoAdd onNewEvent={handleNewTodo} />
                 </div>
             </div>
 
