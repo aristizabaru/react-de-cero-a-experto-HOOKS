@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useForm } from '../hooks/useForm';
 
-export const TodoAdd = ({ onNewEvent }) => {
+export const TodoAdd = ({ onCreateTodo }) => {
 
     const { formState, onInputChange, onResetForm } = useForm({
         description: '',
@@ -14,7 +14,7 @@ export const TodoAdd = ({ onNewEvent }) => {
 
         if (description.length <= 1) return;
 
-        onNewEvent(description);
+        onCreateTodo(description);
         onResetForm();
     };
 
@@ -37,5 +37,5 @@ export const TodoAdd = ({ onNewEvent }) => {
 };
 
 TodoAdd.propTypes = {
-    onNewEvent: PropTypes.func,
+    onCreateTodo: PropTypes.func,
 };
