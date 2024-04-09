@@ -9,10 +9,11 @@
 // import { MemoHook } from "./06-memo/MemoHook";
 // import { CallbackHook } from "./06-memo/CallbackHook";
 // import { Padre } from "./07-tarea-memo/Padre";
-import { TodoApp } from "./08-useReducer/TodoApp";
+// import { TodoApp } from "./08-useReducer/TodoApp";
+import { MainApp } from "./09-useContext/MainApp";
 
 export const HooksApp = () => {
     return (
-        <TodoApp />
+        <MainApp />
     );
 };
